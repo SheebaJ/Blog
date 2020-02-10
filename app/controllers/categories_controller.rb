@@ -11,7 +11,7 @@ class CategoriesController < ApplicationController
         @category.name = params["category"]["name"]
         @category.description = params["category"]["description"]
         if @category.save
-            redirect_to @category
+            redirect_to categories_path
         else
         end
 	end
@@ -26,16 +26,14 @@ class CategoriesController < ApplicationController
 		@categories = Category.all
 	end
 
-    def update
+	def update
 		@category = Category.find(params[:id])
-        @category.name = params["category"]["name"]
-        @category.description =["category"]["description"]
-        if @category.save
-          redirect_to categories_path
-		else
+		@category.name = params['category']['name']
+		@category.description = params['category']['description']
+		if @category.save
+		  redirect_to categories_path
 		end
 	end
-
 	def destroy
 		@category = Category.find(params[:id])
 		@category.destroy

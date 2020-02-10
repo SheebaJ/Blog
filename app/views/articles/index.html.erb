@@ -1,9 +1,18 @@
-<h2>New Article</h2>
-
-<%= @articles.each do |p| %>
-  <h3><%= p.title %> - <%= p.body %></h3> - <%= p.category_id %></h3>  
-  <h3><%= link_to "New Post", new_post_path %></h3>
-  <h3><%= link_to "Show", p %></h3>
-  <h3><%= link_to "Edit", edit_post_path(p) %></h3>
-  <h3><%= link_to "Delete", p , method: :delete, data: { confirm: "sure?" } %></h3>
+<h1> articles index </h1>
+  <h3><%= link_to "New Article", new_article_path %></h3>
+<% @articles.each do |article|%>
+  <%= article.title %><br/>
+  <%= article.body %><br/>
+  <%=  Category.find(article.category_id).name %><br/>
+  <%= article.publish_date %><br/>
+  <% if article.is_published %>
+    It is published
+  <% else %>
+    It is not published
+  <% end %>
+  <br/>
+  <%= article.feature_image_url %><br/><br/>
+  <%= link_to "Show", article %>
+  <%= link_to "Edit", edit_article_path(article) %>
+  <%= link_to "Delete", article , method: :delete, data: { confirm: "sure?" } %>
 <% end %>

@@ -1,16 +1,23 @@
-<%= form_with(model: @article, local: true) do |f| %>
+
+<%= form_with model: @article do |f| %>
   
-  <%= f.label :title %>
-  <%= f.text_field :title %></br>
+  <label> Enter your article title </label>
+  <%= f.text_field :title %><br/>
 
-  <%= f.label :body %>
-  <%= f.text_field :body %></br>
+  <label> Say something about your article </label>
+  <%= f.text_field :body %><br/>
 
-  <%= f.collection_select :category_id, Category.all, :id, :name, prompt: "Select Category" %></br>
+  <label> Which category this articles belongs to:  </label>
+  <%= f.collection_select :category_id, Category.all, :id, :name, prompt: "Select Category" %><br/>
 
-  <%= f.date_field :publish_date, order: [:day, :month, :year] %></br>
+  <label> Publish date:  </label>
+  <%= f.date_field :publish_date, order: [:day, :month, :year] %><br/>
 
-  <%= f.file_field :feature_image_url %></br>
+  <label> Enter your URL </label>
+  <%= f.file_field :feature_image_url %><br/>
+
+  <label> Published </label>
+  <%= f.check_box :is_published, checked: "checked" %><br/>
 
   <%= f.submit %>
 
