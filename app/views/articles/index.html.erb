@@ -1,10 +1,13 @@
 <h1> articles index </h1>
   <h3><%= link_to "New Article", new_article_path %></h3>
 <% @articles.each do |article|%>
-  <%= article.title %><br/>
-  <%= article.body %><br/>
-  <%=  Category.find(article.category_id).name %><br/>
-  <%= article.publish_date %><br/>
+  <%=unless article.category_id.nil? %>
+    <%=break%>
+    <%else %>
+    <%= article.title %><br/>
+    <%= article.body %><br/>
+    <%=  Category.find(article.category_id).name %><br/>
+    <%= article.publish_date %><br/>
   <% if article.is_published %>
     It is published
   <% else %>
@@ -15,4 +18,5 @@
   <%= link_to "Show", article %>
   <%= link_to "Edit", edit_article_path(article) %>
   <%= link_to "Delete", article , method: :delete, data: { confirm: "sure?" } %><br/><br/>
+<%= end %>
 <% end %>

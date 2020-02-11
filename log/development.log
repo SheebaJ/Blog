@@ -5665,3 +5665,1259 @@ Processing by ArticlesController#new as HTML
 Completed 200 OK in 88ms (Views: 85.9ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/categories" for ::1 at 2020-02-11 09:15:20 +0530
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ashsa/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:3
+  Rendered categories/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 227ms (Views: 213.9ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/categories/new" for ::1 at 2020-02-11 09:15:23 +0530
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (5.4ms)
+  Rendered categories/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 141ms (Views: 31.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/categories" for ::1 at 2020-02-11 09:15:55 +0530
+Processing by CategoriesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"98WVPXw4MxwSQUrC8/4JETKhUKt6qWI5wdU7brghEgTLDJSmUJz1ll4p9/9D/8qTcBY8VPJyyN+wL9w3qOSJ5A==", "category"=>{"name"=>"Movies", "description"=>"Movies, also known as films, are a type of visual communication which uses moving pictures and sound to tell stories or teach people something"}, "commit"=>"Create Category"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:13
+  [1m[36mCategory Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Movies"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:13
+  [1m[36mCategory Create (60.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Movies"], ["description", "Movies, also known as films, are a type of visual communication which uses moving pictures and sound to tell stories or teach people something"], ["created_at", "2020-02-11 03:45:55.649410"], ["updated_at", "2020-02-11 03:45:55.649410"]]
+  ↳ app/controllers/categories_controller.rb:13
+  [1m[35m (38.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:13
+Redirected to http://localhost:3000/categories
+Completed 200 OK in 110ms (ActiveRecord: 99.2ms)
+
+
+Started GET "/categories" for ::1 at 2020-02-11 09:15:55 +0530
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:3
+  Rendered categories/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/categories/3" for ::1 at 2020-02-11 09:16:01 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/views/categories/show.html.erb:3
+  Rendered categories/show.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 58ms (Views: 52.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/categories/3/edit" for ::1 at 2020-02-11 09:16:05 +0530
+Processing by CategoriesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:25
+  Rendering categories/edit.html.erb within layouts/application
+  Rendered categories/_form.html.erb (5.2ms)
+  Rendered categories/edit.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 58ms (Views: 48.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/categories" for ::1 at 2020-02-11 09:19:03 +0530
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:3
+  Rendered categories/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 44ms (Views: 41.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories" for ::1 at 2020-02-11 09:19:14 +0530
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:3
+  Rendered categories/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 33ms (Views: 31.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories" for ::1 at 2020-02-11 09:19:52 +0530
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:3
+  Rendered categories/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 40ms (Views: 38.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories" for ::1 at 2020-02-11 09:20:47 +0530
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:3
+  Rendered categories/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 54ms (Views: 51.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/categories" for ::1 at 2020-02-11 09:20:58 +0530
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:3
+  Rendered categories/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 26ms (Views: 23.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/categories/3" for ::1 at 2020-02-11 09:21:05 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/views/categories/show.html.erb:3
+  Rendered categories/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 43ms (Views: 38.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/categories/2/edit" for ::1 at 2020-02-11 09:21:07 +0530
+Processing by CategoriesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:25
+  Rendering categories/edit.html.erb within layouts/application
+  Rendered categories/_form.html.erb (6.4ms)
+  Rendered categories/edit.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 49ms (Views: 44.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/categories/2" for ::1 at 2020-02-11 09:21:09 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/show.html.erb:3
+  Rendered categories/show.html.erb within layouts/application (31.9ms)
+Completed 200 OK in 62ms (Views: 53.4ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/categories/2" for ::1 at 2020-02-11 09:21:59 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/show.html.erb:3
+  Rendered categories/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 45ms (Views: 40.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/categories/2" for ::1 at 2020-02-11 09:22:07 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/show.html.erb:3
+  Rendered categories/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 51ms (Views: 45.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/categories/2" for ::1 at 2020-02-11 09:23:08 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/show.html.erb:4
+  Rendered categories/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 39ms (Views: 36.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categories/2" for ::1 at 2020-02-11 09:24:21 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/show.html.erb:4
+  Rendered categories/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 34ms (Views: 31.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories/2" for ::1 at 2020-02-11 09:25:03 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/show.html.erb:4
+  Rendered categories/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories/2" for ::1 at 2020-02-11 09:25:09 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/show.html.erb:4
+  Rendered categories/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 48ms (Views: 43.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/categories/2" for ::1 at 2020-02-11 09:25:30 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/show.html.erb:4
+  Rendered categories/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 60ms (Views: 55.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/categories/2" for ::1 at 2020-02-11 09:25:39 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/show.html.erb:4
+  Rendered categories/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 42ms (Views: 36.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/categories" for ::1 at 2020-02-11 09:25:47 +0530
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:3
+  Rendered categories/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 42ms (Views: 37.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/categories/2/edit" for ::1 at 2020-02-11 09:25:57 +0530
+Processing by CategoriesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:25
+  Rendering categories/edit.html.erb within layouts/application
+  Rendered categories/_form.html.erb (1.7ms)
+  Rendered categories/edit.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 28ms (Views: 25.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/categories/2/edit" for ::1 at 2020-02-11 09:26:09 +0530
+Processing by CategoriesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:25
+  Rendering categories/edit.html.erb within layouts/application
+  Rendered categories/_form.html.erb (6.3ms)
+  Rendered categories/edit.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 54ms (Views: 47.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categories/2" for ::1 at 2020-02-11 09:26:12 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/show.html.erb:4
+  Rendered categories/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 27ms (Views: 24.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories/2" for ::1 at 2020-02-11 09:26:14 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/show.html.erb:4
+  Rendered categories/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 36ms (Views: 33.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/categories/2" for ::1 at 2020-02-11 09:26:15 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/show.html.erb:4
+  Rendered categories/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 24ms (Views: 21.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/1" for ::1 at 2020-02-11 09:26:17 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:27
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 20.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/categories/2" for ::1 at 2020-02-11 09:26:31 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/show.html.erb:4
+  Rendered categories/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 43ms (Views: 36.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/categories/2" for ::1 at 2020-02-11 09:26:38 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/show.html.erb:4
+  Rendered categories/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 35ms (Views: 31.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories" for ::1 at 2020-02-11 09:26:44 +0530
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:3
+  Rendered categories/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 121ms (Views: 119.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/categories/2" for ::1 at 2020-02-11 09:26:47 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/show.html.erb:4
+  Rendered categories/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 33ms (Views: 22.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categories/1" for ::1 at 2020-02-11 09:26:50 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/views/categories/show.html.erb:4
+  Rendered categories/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 31ms (Views: 28.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categories/3" for ::1 at 2020-02-11 09:26:52 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/views/categories/show.html.erb:4
+  Rendered categories/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 50ms (Views: 44.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/categories/3" for ::1 at 2020-02-11 09:26:55 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/views/categories/show.html.erb:4
+  Rendered categories/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 34ms (Views: 31.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories/1" for ::1 at 2020-02-11 09:26:57 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/views/categories/show.html.erb:4
+  Rendered categories/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 46ms (Views: 41.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/categories/2" for ::1 at 2020-02-11 09:27:03 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/show.html.erb:4
+  Rendered categories/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 37ms (Views: 34.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categories/1" for ::1 at 2020-02-11 09:27:09 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/views/categories/show.html.erb:4
+  Rendered categories/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 34ms (Views: 31.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles" for ::1 at 2020-02-11 09:27:18 +0530
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 31ms (Views: 29.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles/new" for ::1 at 2020-02-11 09:27:35 +0530
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/articles/_form.html.erb:11
+  Rendered articles/_form.html.erb (13.9ms)
+  Rendered articles/new.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 39ms (Views: 37.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/articles" for ::1 at 2020-02-11 09:27:56 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oKVrq0aWFDjdhtiwAs51wFcWL43RmyYxGd6Xdqg8NlsqZ0MfsdFcSZlzhEtVRj3ZPrGVc8hklCwFaauy/KvUKg==", "article"=>{"title"=>"fitness", "body"=>"erfefrefre", "category_id"=>"1", "publish_date"=>"2020-02-12", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007f03bdcfda60 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-10562-1ey3sp1.png>, @original_filename="Screenshot from 2020-02-06 14-20-11.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-06 14-20-11.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[36mArticle Create (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "category_id", "publish_date", "feature_image_url", "is_published", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "fitness"], ["body", "erfefrefre"], ["category_id", 1], ["publish_date", "2020-02-12"], ["feature_image_url", "#<ActionDispatch::Http::UploadedFile:0x00007f03bdcfda60>"], ["is_published", false], ["created_at", "2020-02-11 03:57:56.083008"], ["updated_at", "2020-02-11 03:57:56.083008"]]
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[35m (34.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:21
+Redirected to http://localhost:3000/articles
+Completed 200 OK in 41ms (ActiveRecord: 35.5ms)
+
+
+Started GET "/articles" for ::1 at 2020-02-11 09:27:56 +0530
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 41ms (Views: 37.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/categories/1" for ::1 at 2020-02-11 09:28:06 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/views/categories/show.html.erb:4
+  Rendered categories/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 56ms (Views: 53.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories" for ::1 at 2020-02-11 09:29:55 +0530
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:3
+  Rendered categories/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/categories" for ::1 at 2020-02-11 09:30:14 +0530
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:3
+  Rendered categories/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/categories" for ::1 at 2020-02-11 09:30:29 +0530
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:3
+  Rendered categories/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 44ms (Views: 40.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categories" for ::1 at 2020-02-11 09:33:48 +0530
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:3
+  Rendered categories/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 45ms (Views: 40.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/categories" for ::1 at 2020-02-11 09:33:56 +0530
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:3
+  Rendered categories/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 59ms (Views: 55.2ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."category_id" = $1 LIMIT $2[0m  [["category_id", 1], ["LIMIT", 11]]
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 1]]
+Started GET "/categories" for ::1 at 2020-02-11 09:38:11 +0530
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:3
+  Rendered categories/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/categories" for ::1 at 2020-02-11 09:38:27 +0530
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:3
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/index.html.erb:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/views/categories/index.html.erb:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/views/categories/index.html.erb:4
+  Rendered categories/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 37ms (Views: 34.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/categories/2" for ::1 at 2020-02-11 09:58:26 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/show.html.erb:4
+  Rendered categories/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 36ms (Views: 32.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/articles" for ::1 at 2020-02-11 09:59:27 +0530
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 34ms (Views: 31.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/articles/new" for ::1 at 2020-02-11 09:59:40 +0530
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/articles/_form.html.erb:11
+  Rendered articles/_form.html.erb (5.2ms)
+  Rendered articles/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 37ms (Views: 34.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles/new" for ::1 at 2020-02-11 10:01:22 +0530
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/articles/_form.html.erb:11
+  Rendered articles/_form.html.erb (9.8ms)
+  Rendered articles/new.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 47ms (Views: 41.6ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/articles" for ::1 at 2020-02-11 10:01:46 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yR2DylOwKqL0fOk6zy9rP9HxX/b8VTqUS6GdH7tangrWidZwb5p+vwmdMNNC+N+3Ol1ZG5QHdLfwbwGKwlpz8A==", "article"=>{"title"=>"film", "body"=>"Movies, also known as films, are a type of visual communication which uses moving pictures and sound to tell stories or teach people something. People in every part of the world watch movies as a type of enterttainment", "category_id"=>"3", "publish_date"=>"2020-02-22", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007f03c40d5308 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-10562-11opilp.png>, @original_filename="Screenshot from 2020-02-06 14-22-29.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-06 14-22-29.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Article"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[36mArticle Create (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "category_id", "publish_date", "feature_image_url", "is_published", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "film"], ["body", "Movies, also known as films, are a type of visual communication which uses moving pictures and sound to tell stories or teach people something. People in every part of the world watch movies as a type of enterttainment"], ["category_id", 3], ["publish_date", "2020-02-22"], ["feature_image_url", "#<ActionDispatch::Http::UploadedFile:0x00007f03c40d5308>"], ["is_published", false], ["created_at", "2020-02-11 04:31:46.979610"], ["updated_at", "2020-02-11 04:31:46.979610"]]
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[35m (29.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:21
+Redirected to http://localhost:3000/articles
+Completed 200 OK in 36ms (ActiveRecord: 30.4ms)
+
+
+Started GET "/articles" for ::1 at 2020-02-11 10:01:47 +0530
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 50ms (Views: 44.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/articles/new" for ::1 at 2020-02-11 10:01:56 +0530
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/articles/_form.html.erb:11
+  Rendered articles/_form.html.erb (5.6ms)
+  Rendered articles/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 32ms (Views: 30.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/articles" for ::1 at 2020-02-11 10:02:13 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hR6BhnW4jo7Edll2Hfw7uDk0CvMJeKmAJmjaLEGcsOwP3Kkygv/G/4CDBY1KdHOhUJOwDRCHG5063+boFQtSnQ==", "article"=>{"title"=>"Movie thing", "body"=>"sfsfsfs", "category_id"=>"3", "publish_date"=>"2020-02-03", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007f03bdca48c0 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-10562-10xsx09.png>, @original_filename="Screenshot from 2020-02-07 12-33-59.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-33-59.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Article"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[36mArticle Create (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "category_id", "publish_date", "feature_image_url", "is_published", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Movie thing"], ["body", "sfsfsfs"], ["category_id", 3], ["publish_date", "2020-02-03"], ["feature_image_url", "#<ActionDispatch::Http::UploadedFile:0x00007f03bdca48c0>"], ["is_published", true], ["created_at", "2020-02-11 04:32:13.497491"], ["updated_at", "2020-02-11 04:32:13.497491"]]
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[35m (24.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:21
+Redirected to http://localhost:3000/articles
+Completed 200 OK in 32ms (ActiveRecord: 25.4ms)
+
+
+Started GET "/articles" for ::1 at 2020-02-11 10:02:13 +0530
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 39ms (Views: 35.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/articles/new" for ::1 at 2020-02-11 10:03:15 +0530
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ashsa/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/articles/_form.html.erb:11
+  Rendered articles/_form.html.erb (20.6ms)
+  Rendered articles/new.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 236ms (Views: 216.8ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/articles" for ::1 at 2020-02-11 10:03:40 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ePYdREPtAEiVbxlDIBLoSKAvIpzxN/ZiuekdjKJMxTjyNDXwtKpIOdGaRbh3mqBRyYiYYujIRH+lXiFI9tsnSQ==", "article"=>{"title"=>"sdsdad", "body"=>"adadad", "category_id"=>"1", "publish_date"=>"2020-03-14", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007f26d02a61d0 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-12345-16o4qwc.png>, @original_filename="Screenshot from 2020-02-07 11-29-52.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 11-29-52.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Article"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/articles_controller.rb:21
+No template found for ArticlesController#create, rendering head :no_content
+Completed 204 No Content in 23ms (ActiveRecord: 0.5ms)
+
+
+Started POST "/articles" for ::1 at 2020-02-11 10:03:41 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ePYdREPtAEiVbxlDIBLoSKAvIpzxN/ZiuekdjKJMxTjyNDXwtKpIOdGaRbh3mqBRyYiYYujIRH+lXiFI9tsnSQ==", "article"=>{"title"=>"sdsdad", "body"=>"adadad", "category_id"=>"1", "publish_date"=>"2020-03-14", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007f26cc24da48 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-12345-17u1bym.png>, @original_filename="Screenshot from 2020-02-07 11-29-52.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 11-29-52.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Article"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/articles_controller.rb:21
+No template found for ArticlesController#create, rendering head :no_content
+Completed 204 No Content in 24ms (ActiveRecord: 0.7ms)
+
+
+Started POST "/articles" for ::1 at 2020-02-11 10:03:41 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ePYdREPtAEiVbxlDIBLoSKAvIpzxN/ZiuekdjKJMxTjyNDXwtKpIOdGaRbh3mqBRyYiYYujIRH+lXiFI9tsnSQ==", "article"=>{"title"=>"sdsdad", "body"=>"adadad", "category_id"=>"1", "publish_date"=>"2020-03-14", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007f26c424e450 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-12345-l6b7z2.png>, @original_filename="Screenshot from 2020-02-07 11-29-52.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 11-29-52.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Article"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/articles_controller.rb:21
+No template found for ArticlesController#create, rendering head :no_content
+Completed 204 No Content in 42ms (ActiveRecord: 1.6ms)
+
+
+Started POST "/articles" for ::1 at 2020-02-11 10:03:43 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ePYdREPtAEiVbxlDIBLoSKAvIpzxN/ZiuekdjKJMxTjyNDXwtKpIOdGaRbh3mqBRyYiYYujIRH+lXiFI9tsnSQ==", "article"=>{"title"=>"sdsdad", "body"=>"adadad", "category_id"=>"1", "publish_date"=>"2020-03-14", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007f26c428b3f0 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-12345-1lqjeqq.png>, @original_filename="Screenshot from 2020-02-07 11-29-52.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 11-29-52.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Article"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/articles_controller.rb:21
+No template found for ArticlesController#create, rendering head :no_content
+Completed 204 No Content in 22ms (ActiveRecord: 0.6ms)
+
+
+Started POST "/articles" for ::1 at 2020-02-11 10:03:43 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ePYdREPtAEiVbxlDIBLoSKAvIpzxN/ZiuekdjKJMxTjyNDXwtKpIOdGaRbh3mqBRyYiYYujIRH+lXiFI9tsnSQ==", "article"=>{"title"=>"sdsdad", "body"=>"adadad", "category_id"=>"1", "publish_date"=>"2020-03-14", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007f26d423a080 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-12345-k4tjmz.png>, @original_filename="Screenshot from 2020-02-07 11-29-52.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 11-29-52.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Article"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/articles_controller.rb:21
+No template found for ArticlesController#create, rendering head :no_content
+Completed 204 No Content in 40ms (ActiveRecord: 1.6ms)
+
+
+Started POST "/articles" for ::1 at 2020-02-11 10:05:59 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ePYdREPtAEiVbxlDIBLoSKAvIpzxN/ZiuekdjKJMxTjyNDXwtKpIOdGaRbh3mqBRyYiYYujIRH+lXiFI9tsnSQ==", "article"=>{"title"=>"sdsdad", "body"=>"adadad", "category_id"=>"1", "publish_date"=>"2020-02-06", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007f26cc4c4bf0 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-12345-spd05t.png>, @original_filename="Screenshot from 2020-02-07 11-29-52.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 11-29-52.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Article"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[36mArticle Create (1.2ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "category_id", "publish_date", "feature_image_url", "is_published", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "sdsdad"], ["body", "adadad"], ["category_id", 1], ["publish_date", "2020-02-06"], ["feature_image_url", "#<ActionDispatch::Http::UploadedFile:0x00007f26cc4c4bf0>"], ["is_published", true], ["created_at", "2020-02-11 04:35:59.023430"], ["updated_at", "2020-02-11 04:35:59.023430"]]
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[35m (54.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:21
+Redirected to http://localhost:3000/articles
+Completed 200 OK in 68ms (ActiveRecord: 56.5ms)
+
+
+Started GET "/articles" for ::1 at 2020-02-11 10:05:59 +0530
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 38ms (Views: 35.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/categories" for ::1 at 2020-02-11 10:06:13 +0530
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:3
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/index.html.erb:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/views/categories/index.html.erb:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/views/categories/index.html.erb:4
+  Rendered categories/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 31ms (Views: 27.7ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/categories/3" for ::1 at 2020-02-11 10:06:20 +0530
+Processing by CategoriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6ZKMTIheplNgY8XRqzyMjJ07n2Dl44FT0SiZi0nFtTv2Btn2tHTyTp2CHDgm6zgEdpeZjY2xz3Bq5gUeMMVYwQ==", "id"=>"3"}
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:38
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:39
+  [1m[36mCategory Destroy (0.4ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/categories_controller.rb:39
+  [1m[35m (59.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:39
+Redirected to http://localhost:3000/categories
+Completed 302 Found in 67ms (ActiveRecord: 60.6ms)
+
+
+Started GET "/categories" for ::1 at 2020-02-11 10:06:20 +0530
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:3
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/index.html.erb:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/views/categories/index.html.erb:4
+  Rendered categories/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 35ms (Views: 32.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 10:06:27 +0530
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Category with 'id'=3):
+  
+app/views/articles/index.html.erb:6:in `block in _app_views_articles_index_html_erb___1166552853482803728_69902284980260'
+app/views/articles/index.html.erb:3:in `_app_views_articles_index_html_erb___1166552853482803728_69902284980260'
+Started GET "/categories" for ::1 at 2020-02-11 10:06:31 +0530
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:3
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/index.html.erb:4
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/views/categories/index.html.erb:4
+  Rendered categories/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 41ms (Views: 36.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 10:06:45 +0530
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (8.7ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Category with 'id'=3):
+  
+app/views/articles/index.html.erb:6:in `block in _app_views_articles_index_html_erb___1166552853482803728_69902285089820'
+app/views/articles/index.html.erb:3:in `_app_views_articles_index_html_erb___1166552853482803728_69902285089820'
+Started GET "/categories" for ::1 at 2020-02-11 10:08:30 +0530
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:3
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/index.html.erb:4
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/views/categories/index.html.erb:4
+  Rendered categories/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 48ms (Views: 42.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/categories/new" for ::1 at 2020-02-11 10:08:32 +0530
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (5.1ms)
+  Rendered categories/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 46ms (Views: 42.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/categories" for ::1 at 2020-02-11 10:08:36 +0530
+Processing by CategoriesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wAXmttXI4C1Z/jsb+izwUqllFl540uhkIpM6hHrt1rr8zOct+WwmpxWWhiZKLTPQ69J6ofAJQoJTad3daihNWg==", "category"=>{"name"=>"Movies", "description"=>"hghngh"}, "commit"=>"Create Category"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:13
+  [1m[36mCategory Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Movies"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:13
+  [1m[36mCategory Create (1.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Movies"], ["description", "hghngh"], ["created_at", "2020-02-11 04:38:36.929263"], ["updated_at", "2020-02-11 04:38:36.929263"]]
+  ↳ app/controllers/categories_controller.rb:13
+  [1m[35m (112.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:13
+Redirected to http://localhost:3000/categories
+Completed 200 OK in 129ms (ActiveRecord: 115.6ms)
+
+
+Started GET "/categories" for ::1 at 2020-02-11 10:08:37 +0530
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:3
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/index.html.erb:4
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/views/categories/index.html.erb:4
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 4]]
+  ↳ app/views/categories/index.html.erb:4
+  Rendered categories/index.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 56ms (Views: 49.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/articles" for ::1 at 2020-02-11 10:08:46 +0530
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (20.7ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 2.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Category with 'id'=3):
+  
+app/views/articles/index.html.erb:6:in `block in _app_views_articles_index_html_erb___1166552853482803728_69902289788840'
+app/views/articles/index.html.erb:3:in `_app_views_articles_index_html_erb___1166552853482803728_69902289788840'
+Started GET "/articles" for ::1 at 2020-02-11 10:12:22 +0530
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  Rendered articles/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 40ms (Views: 37.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles" for ::1 at 2020-02-11 10:20:09 +0530
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:4: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+... article.category_id == "nil" );@output_buffer.safe_append='
+...                              ^
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:5: void value expression
+...;@output_buffer.append=(break);@output_buffer.safe_append='
+...                              ^
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:6: syntax error, unexpected keyword_else, expecting ')'
+'.freeze;    else 
+             ^~~~
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:21: syntax error, unexpected keyword_end
+...eze;@output_buffer.append=( end );@output_buffer.safe_append...
+...                            ^~~
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:22: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end ;
+          ^~~
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:24: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/articles/index.html.erb:4: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/articles/index.html.erb:5: void value expression
+app/views/articles/index.html.erb:6: syntax error, unexpected keyword_else, expecting ')'
+app/views/articles/index.html.erb:21: syntax error, unexpected keyword_end
+app/views/articles/index.html.erb:22: syntax error, unexpected keyword_end, expecting ')'
+app/views/articles/index.html.erb:24: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/articles/index.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/articles" for ::1 at 2020-02-11 10:20:18 +0530
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:4: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...if article.category_id == nil );@output_buffer.safe_append='
+...                              ^
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:5: void value expression
+...;@output_buffer.append=(break);@output_buffer.safe_append='
+...                              ^
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:6: syntax error, unexpected keyword_else, expecting ')'
+'.freeze;    else 
+             ^~~~
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:21: syntax error, unexpected keyword_end
+...eze;@output_buffer.append=( end );@output_buffer.safe_append...
+...                            ^~~
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:22: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end ;
+          ^~~
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:24: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/articles/index.html.erb:4: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/articles/index.html.erb:5: void value expression
+app/views/articles/index.html.erb:6: syntax error, unexpected keyword_else, expecting ')'
+app/views/articles/index.html.erb:21: syntax error, unexpected keyword_end
+app/views/articles/index.html.erb:22: syntax error, unexpected keyword_end, expecting ')'
+app/views/articles/index.html.erb:24: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/articles/index.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/articles" for ::1 at 2020-02-11 10:20:19 +0530
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:4: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...if article.category_id == nil );@output_buffer.safe_append='
+...                              ^
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:5: void value expression
+...;@output_buffer.append=(break);@output_buffer.safe_append='
+...                              ^
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:6: syntax error, unexpected keyword_else, expecting ')'
+'.freeze;    else 
+             ^~~~
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:21: syntax error, unexpected keyword_end
+...eze;@output_buffer.append=( end );@output_buffer.safe_append...
+...                            ^~~
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:22: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end ;
+          ^~~
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:24: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/articles/index.html.erb:4: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/articles/index.html.erb:5: void value expression
+app/views/articles/index.html.erb:6: syntax error, unexpected keyword_else, expecting ')'
+app/views/articles/index.html.erb:21: syntax error, unexpected keyword_end
+app/views/articles/index.html.erb:22: syntax error, unexpected keyword_end, expecting ')'
+app/views/articles/index.html.erb:24: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/articles/index.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/articles" for ::1 at 2020-02-11 10:20:33 +0530
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:4: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+... (article.category_id == nil) );@output_buffer.safe_append='
+...                              ^
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:5: void value expression
+...;@output_buffer.append=(break);@output_buffer.safe_append='
+...                              ^
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:6: syntax error, unexpected keyword_else, expecting ')'
+'.freeze;    else 
+             ^~~~
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:21: syntax error, unexpected keyword_end
+...eze;@output_buffer.append=( end );@output_buffer.safe_append...
+...                            ^~~
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:22: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end ;
+          ^~~
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:24: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/articles/index.html.erb:4: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/articles/index.html.erb:5: void value expression
+app/views/articles/index.html.erb:6: syntax error, unexpected keyword_else, expecting ')'
+app/views/articles/index.html.erb:21: syntax error, unexpected keyword_end
+app/views/articles/index.html.erb:22: syntax error, unexpected keyword_end, expecting ')'
+app/views/articles/index.html.erb:24: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/articles/index.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/articles" for ::1 at 2020-02-11 10:20:58 +0530
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:4: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...(if article.category_id == "" );@output_buffer.safe_append='
+...                              ^
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:5: void value expression
+...;@output_buffer.append=(break);@output_buffer.safe_append='
+...                              ^
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:6: syntax error, unexpected keyword_else, expecting ')'
+'.freeze;    else 
+             ^~~~
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:21: syntax error, unexpected keyword_end
+...eze;@output_buffer.append=( end );@output_buffer.safe_append...
+...                            ^~~
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:22: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end ;
+          ^~~
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:24: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/articles/index.html.erb:4: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/articles/index.html.erb:5: void value expression
+app/views/articles/index.html.erb:6: syntax error, unexpected keyword_else, expecting ')'
+app/views/articles/index.html.erb:21: syntax error, unexpected keyword_end
+app/views/articles/index.html.erb:22: syntax error, unexpected keyword_end, expecting ')'
+app/views/articles/index.html.erb:24: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/articles/index.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/categories" for ::1 at 2020-02-11 10:24:13 +0530
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:3
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/index.html.erb:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/views/categories/index.html.erb:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 4]]
+  ↳ app/views/categories/index.html.erb:4
+  Rendered categories/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 33ms (Views: 30.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/categories" for ::1 at 2020-02-11 10:24:22 +0530
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:3
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 2]]
+  ↳ app/views/categories/index.html.erb:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/views/categories/index.html.erb:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 4]]
+  ↳ app/views/categories/index.html.erb:4
+  Rendered categories/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 48ms (Views: 42.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/categories/1" for ::1 at 2020-02-11 10:24:30 +0530
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:20
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/views/categories/show.html.erb:4
+  Rendered categories/show.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 45ms (Views: 37.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 10:26:04 +0530
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:4: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...less article.category_id.nil? );@output_buffer.safe_append='
+...                              ^
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:5: void value expression
+...;@output_buffer.append=(break);@output_buffer.safe_append='
+...                              ^
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:6: syntax error, unexpected keyword_else, expecting ')'
+'.freeze;    else 
+             ^~~~
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:21: syntax error, unexpected keyword_end
+...eze;@output_buffer.append=( end );@output_buffer.safe_append...
+...                            ^~~
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:22: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end ;
+          ^~~
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:24: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/ashsa/Desktop/Blog/app/views/articles/index.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/articles/index.html.erb:4: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/articles/index.html.erb:5: void value expression
+app/views/articles/index.html.erb:6: syntax error, unexpected keyword_else, expecting ')'
+app/views/articles/index.html.erb:21: syntax error, unexpected keyword_end
+app/views/articles/index.html.erb:22: syntax error, unexpected keyword_end, expecting ')'
+app/views/articles/index.html.erb:24: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/articles/index.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
