@@ -1,4 +1,12 @@
+<h1><%= @category.name %></h1>
+<p> <%= @category.description %></p>
+  <% @category.articles.each_with_index do |article,index| %>  	
+    <%= article.feature_image_url %>
+	  <%= article.title %>
+	  <%= article.body%></p>
+	  <%= link_to "more", article%> 
+	  Posted on <%= article.publish_date.strftime("%B %d %Y") %>
+	  <%= link_to article.category.name, article.category %>
+  <% end %>
 
-<%= @category.name %>
-<%= @category.description %>
-  <%= link_to "Back", categories_path %>
+
