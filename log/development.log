@@ -4946,3 +4946,722 @@ Did you mean?  publish_date=
                publish_date?):
   
 app/controllers/articles_controller.rb:36:in `update'
+Started GET "/articles/1/edit" for ::1 at 2020-02-11 08:55:52 +0530
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ashsa/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:29
+  Rendering articles/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/articles/_form.html.erb:11
+  Rendered articles/_form.html.erb (18.5ms)
+  Rendered articles/edit.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 243ms (Views: 218.3ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/articles" for ::1 at 2020-02-11 08:56:01 +0530
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 42ms (Views: 39.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/articles/new" for ::1 at 2020-02-11 08:56:04 +0530
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/articles/_form.html.erb:11
+  Rendered articles/_form.html.erb (2.6ms)
+  Rendered articles/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 35ms (Views: 21.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/articles" for ::1 at 2020-02-11 08:57:20 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jHi7SL7rjIcH4pbthcvTpknhn+RqvUgtnF26S+c2JxIGupP8SazE9kMXyhbSQ5u/IEYlGnNC+jCA6oaPs6HFYw==", "article"=>{"title"=>"business blah", "body"=>"Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-12", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fcb48030eb0 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-1avdzz2.png>, @original_filename="Screenshot from 2020-02-07 12-14-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-14-39.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fcb440408a0>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 08:57:21 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jHi7SL7rjIcH4pbthcvTpknhn+RqvUgtnF26S+c2JxIGupP8SazE9kMXyhbSQ5u/IEYlGnNC+jCA6oaPs6HFYw==", "article"=>{"title"=>"business blah", "body"=>"Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-12", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fcb4d964e78 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-1lph43s.png>, @original_filename="Screenshot from 2020-02-07 12-14-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-14-39.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fcb4d93bdc0>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 08:57:26 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jHi7SL7rjIcH4pbthcvTpknhn+RqvUgtnF26S+c2JxIGupP8SazE9kMXyhbSQ5u/IEYlGnNC+jCA6oaPs6HFYw==", "article"=>{"title"=>"business blah", "body"=>"Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-12", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fcb440a45d0 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-16097qb.png>, @original_filename="Screenshot from 2020-02-07 12-14-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-14-39.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fcb4409f0f8>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 08:57:28 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jHi7SL7rjIcH4pbthcvTpknhn+RqvUgtnF26S+c2JxIGupP8SazE9kMXyhbSQ5u/IEYlGnNC+jCA6oaPs6HFYw==", "article"=>{"title"=>"business blah", "body"=>"Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-12", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fcb4dd334f0 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-17fi30e.png>, @original_filename="Screenshot from 2020-02-07 12-14-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-14-39.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"0"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fcb4dd0e740>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 08:57:31 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jHi7SL7rjIcH4pbthcvTpknhn+RqvUgtnF26S+c2JxIGupP8SazE9kMXyhbSQ5u/IEYlGnNC+jCA6oaPs6HFYw==", "article"=>{"title"=>"business blah", "body"=>"Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-12", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fcb500cc330 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-1gteo94.png>, @original_filename="Screenshot from 2020-02-07 12-14-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-14-39.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fcb500bd3f8>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 08:57:32 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jHi7SL7rjIcH4pbthcvTpknhn+RqvUgtnF26S+c2JxIGupP8SazE9kMXyhbSQ5u/IEYlGnNC+jCA6oaPs6HFYw==", "article"=>{"title"=>"business blah", "body"=>"Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-12", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fcb4e055660 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-1vdy5c7.png>, @original_filename="Screenshot from 2020-02-07 12-14-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-14-39.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fcb4e04bde0>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 08:57:32 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jHi7SL7rjIcH4pbthcvTpknhn+RqvUgtnF26S+c2JxIGupP8SazE9kMXyhbSQ5u/IEYlGnNC+jCA6oaPs6HFYw==", "article"=>{"title"=>"business blah", "body"=>"Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-12", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x000055759bbffb10 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-mfat9c.png>, @original_filename="Screenshot from 2020-02-07 12-14-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-14-39.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x000055759b8b5680>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 08:57:32 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jHi7SL7rjIcH4pbthcvTpknhn+RqvUgtnF26S+c2JxIGupP8SazE9kMXyhbSQ5u/IEYlGnNC+jCA6oaPs6HFYw==", "article"=>{"title"=>"business blah", "body"=>"Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-12", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fcb4e22cce0 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-wt4whi.png>, @original_filename="Screenshot from 2020-02-07 12-14-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-14-39.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fcb4e21f7e8>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 08:57:33 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jHi7SL7rjIcH4pbthcvTpknhn+RqvUgtnF26S+c2JxIGupP8SazE9kMXyhbSQ5u/IEYlGnNC+jCA6oaPs6HFYw==", "article"=>{"title"=>"business blah", "body"=>"Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-12", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fcb4d4cf0c0 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-1h2ih23.png>, @original_filename="Screenshot from 2020-02-07 12-14-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-14-39.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fcb4d4ae6e0>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started GET "/articles/new" for ::1 at 2020-02-11 08:58:06 +0530
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/articles/_form.html.erb:11
+  Rendered articles/_form.html.erb (18.1ms)
+  Rendered articles/new.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 65ms (Views: 41.6ms | ActiveRecord: 9.3ms)
+
+
+Started POST "/articles" for ::1 at 2020-02-11 08:58:26 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g4XGjy8rZINaQOyIIR4gDnxdlBkSdvrWm6ZjZBz09LmcEZM1EwEwnqehNWGsyZSGl/GS9HoktPUgaP/xZfQZQw==", "article"=>{"title"=>"business blah", "body"=>" business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-12", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fcb4d7e19e8 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-1i9tcp1.png>, @original_filename="Screenshot from 2020-02-07 12-14-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-14-39.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fcb4d7bd278>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 08:58:27 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g4XGjy8rZINaQOyIIR4gDnxdlBkSdvrWm6ZjZBz09LmcEZM1EwEwnqehNWGsyZSGl/GS9HoktPUgaP/xZfQZQw==", "article"=>{"title"=>"business blah", "body"=>" business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-12", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fcb5005d8b8 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-1dot0oq.png>, @original_filename="Screenshot from 2020-02-07 12-14-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-14-39.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fcb4e330010>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 08:58:27 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g4XGjy8rZINaQOyIIR4gDnxdlBkSdvrWm6ZjZBz09LmcEZM1EwEwnqehNWGsyZSGl/GS9HoktPUgaP/xZfQZQw==", "article"=>{"title"=>"business blah", "body"=>" business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-12", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fcb4d8dcfa0 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-1hmxv37.png>, @original_filename="Screenshot from 2020-02-07 12-14-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-14-39.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fcb4d8b85d8>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 08:58:28 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g4XGjy8rZINaQOyIIR4gDnxdlBkSdvrWm6ZjZBz09LmcEZM1EwEwnqehNWGsyZSGl/GS9HoktPUgaP/xZfQZQw==", "article"=>{"title"=>"business blah", "body"=>" business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-12", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fcb50077650 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-1asnffh.png>, @original_filename="Screenshot from 2020-02-07 12-14-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-14-39.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fcb5006df88>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 08:58:28 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g4XGjy8rZINaQOyIIR4gDnxdlBkSdvrWm6ZjZBz09LmcEZM1EwEwnqehNWGsyZSGl/GS9HoktPUgaP/xZfQZQw==", "article"=>{"title"=>"business blah", "body"=>" business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-12", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fcb4d98ce50 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-voivxv.png>, @original_filename="Screenshot from 2020-02-07 12-14-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-14-39.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fcb4d971510>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 08:58:35 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g4XGjy8rZINaQOyIIR4gDnxdlBkSdvrWm6ZjZBz09LmcEZM1EwEwnqehNWGsyZSGl/GS9HoktPUgaP/xZfQZQw==", "article"=>{"title"=>"business blah", "body"=>" business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-11", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fcb5007d848 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-1xpwp15.png>, @original_filename="Screenshot from 2020-02-07 12-14-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-14-39.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fcb44083d58>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 08:58:54 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g4XGjy8rZINaQOyIIR4gDnxdlBkSdvrWm6ZjZBz09LmcEZM1EwEwnqehNWGsyZSGl/GS9HoktPUgaP/xZfQZQw==", "article"=>{"title"=>"business blah", "body"=>" business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-11", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fcb4d9e41c8 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-o8er09.png>, @original_filename="Screenshot from 2020-02-07 12-14-39.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-14-39.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fcb4d9aef50>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started GET "/articles/new" for ::1 at 2020-02-11 08:58:55 +0530
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/articles/_form.html.erb:11
+  Rendered articles/_form.html.erb (8.1ms)
+  Rendered articles/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 47ms (Views: 43.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/articles" for ::1 at 2020-02-11 08:59:27 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L1CYsWLj2dTtVlJW+NjyAKwHbOBIcNk3q/c66rNNPGwwxM0LXsmNyRC3i791D0aIR6tqDSAilxQQOaZ/yk3Rlg==", "article"=>{"title"=>"business blah", "body"=>"business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-16", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fcb4e224720 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-1ji4kpi.png>, @original_filename="Screenshot from 2020-02-06 14-22-29.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-06 14-22-29.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fcb4e2144d8>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 08:59:28 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L1CYsWLj2dTtVlJW+NjyAKwHbOBIcNk3q/c66rNNPGwwxM0LXsmNyRC3i791D0aIR6tqDSAilxQQOaZ/yk3Rlg==", "article"=>{"title"=>"business blah", "body"=>"business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-16", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fcb4cf81c58 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-pj41t9.png>, @original_filename="Screenshot from 2020-02-06 14-22-29.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-06 14-22-29.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fcb4ce7c010>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 08:59:28 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L1CYsWLj2dTtVlJW+NjyAKwHbOBIcNk3q/c66rNNPGwwxM0LXsmNyRC3i791D0aIR6tqDSAilxQQOaZ/yk3Rlg==", "article"=>{"title"=>"business blah", "body"=>"business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-16", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fcb4e20df48 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-1skredd.png>, @original_filename="Screenshot from 2020-02-06 14-22-29.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-06 14-22-29.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fcb4e1f2888>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 08:59:28 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L1CYsWLj2dTtVlJW+NjyAKwHbOBIcNk3q/c66rNNPGwwxM0LXsmNyRC3i791D0aIR6tqDSAilxQQOaZ/yk3Rlg==", "article"=>{"title"=>"business blah", "body"=>"business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-16", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fcb4ccb78b0 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-r61k.png>, @original_filename="Screenshot from 2020-02-06 14-22-29.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-06 14-22-29.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fcb4cb95b30>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 08:59:29 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L1CYsWLj2dTtVlJW+NjyAKwHbOBIcNk3q/c66rNNPGwwxM0LXsmNyRC3i791D0aIR6tqDSAilxQQOaZ/yk3Rlg==", "article"=>{"title"=>"business blah", "body"=>"business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-16", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fcb4e15aa38 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-k2tg8i.png>, @original_filename="Screenshot from 2020-02-06 14-22-29.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-06 14-22-29.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fcb4e0f2e88>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 08:59:57 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L1CYsWLj2dTtVlJW+NjyAKwHbOBIcNk3q/c66rNNPGwwxM0LXsmNyRC3i791D0aIR6tqDSAilxQQOaZ/yk3Rlg==", "article"=>{"title"=>"business blah", "body"=>"business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-16", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fcb4c42db40 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-1egpwpp.png>, @original_filename="Screenshot from 2020-02-06 14-22-29.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-06 14-22-29.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fcb4c15a530>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 08:59:57 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L1CYsWLj2dTtVlJW+NjyAKwHbOBIcNk3q/c66rNNPGwwxM0LXsmNyRC3i791D0aIR6tqDSAilxQQOaZ/yk3Rlg==", "article"=>{"title"=>"business blah", "body"=>"business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-16", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fcb4e0ab9c0 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-s5m620.png>, @original_filename="Screenshot from 2020-02-06 14-22-29.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-06 14-22-29.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fcb4e0a1a88>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 08:59:57 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L1CYsWLj2dTtVlJW+NjyAKwHbOBIcNk3q/c66rNNPGwwxM0LXsmNyRC3i791D0aIR6tqDSAilxQQOaZ/yk3Rlg==", "article"=>{"title"=>"business blah", "body"=>"business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-16", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fcb5019b2e8 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-14z13sd.png>, @original_filename="Screenshot from 2020-02-06 14-22-29.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-06 14-22-29.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fcb50191388>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 08:59:57 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L1CYsWLj2dTtVlJW+NjyAKwHbOBIcNk3q/c66rNNPGwwxM0LXsmNyRC3i791D0aIR6tqDSAilxQQOaZ/yk3Rlg==", "article"=>{"title"=>"business blah", "body"=>"business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-16", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fcb4e052730 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8338-cyblj8.png>, @original_filename="Screenshot from 2020-02-06 14-22-29.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-06 14-22-29.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fcb4e041ca0>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:13:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 09:00:35 +0530
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ashsa/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L1CYsWLj2dTtVlJW+NjyAKwHbOBIcNk3q/c66rNNPGwwxM0LXsmNyRC3i791D0aIR6tqDSAilxQQOaZ/yk3Rlg==", "article"=>{"title"=>"business blah", "body"=>"business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-16", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fa1acd2abb8 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8666-1ffkqtr.png>, @original_filename="Screenshot from 2020-02-06 14-22-29.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-06 14-22-29.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 129788ms (ActiveRecord: 3.2ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fa1ad003d08>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:14:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 09:04:05 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L1CYsWLj2dTtVlJW+NjyAKwHbOBIcNk3q/c66rNNPGwwxM0LXsmNyRC3i791D0aIR6tqDSAilxQQOaZ/yk3Rlg==", "article"=>{"title"=>"business blah", "body"=>"business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-10", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fa1ac9f4408 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8666-1rylcfm.png>, @original_filename="Screenshot from 2020-02-06 14-22-29.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-06 14-22-29.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 3.2ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fa1ac9ae2c8>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:14:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 09:04:07 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L1CYsWLj2dTtVlJW+NjyAKwHbOBIcNk3q/c66rNNPGwwxM0LXsmNyRC3i791D0aIR6tqDSAilxQQOaZ/yk3Rlg==", "article"=>{"title"=>"business blah", "body"=>"business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-10", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fa1ad0d42a0 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8666-1k41mcs.png>, @original_filename="Screenshot from 2020-02-06 14-22-29.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-06 14-22-29.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fa1ad0b21a0>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:14:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 09:04:07 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L1CYsWLj2dTtVlJW+NjyAKwHbOBIcNk3q/c66rNNPGwwxM0LXsmNyRC3i791D0aIR6tqDSAilxQQOaZ/yk3Rlg==", "article"=>{"title"=>"business blah", "body"=>"business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-10", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fa1ac75de88 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8666-he1rr2.png>, @original_filename="Screenshot from 2020-02-06 14-22-29.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-06 14-22-29.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fa1ac73e060>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:14:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 09:04:08 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L1CYsWLj2dTtVlJW+NjyAKwHbOBIcNk3q/c66rNNPGwwxM0LXsmNyRC3i791D0aIR6tqDSAilxQQOaZ/yk3Rlg==", "article"=>{"title"=>"business blah", "body"=>"business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-10", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fa1acf31538 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8666-jgh6yi.png>, @original_filename="Screenshot from 2020-02-06 14-22-29.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-06 14-22-29.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fa1acf241d0>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:14:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 09:04:08 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L1CYsWLj2dTtVlJW+NjyAKwHbOBIcNk3q/c66rNNPGwwxM0LXsmNyRC3i791D0aIR6tqDSAilxQQOaZ/yk3Rlg==", "article"=>{"title"=>"business blah", "body"=>"business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-10", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x000055571bef5ea8 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8666-1imstsv.png>, @original_filename="Screenshot from 2020-02-06 14-22-29.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-06 14-22-29.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x000055571beb6aa0>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:14:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 09:04:08 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L1CYsWLj2dTtVlJW+NjyAKwHbOBIcNk3q/c66rNNPGwwxM0LXsmNyRC3i791D0aIR6tqDSAilxQQOaZ/yk3Rlg==", "article"=>{"title"=>"business blah", "body"=>"business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-10", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fa1ace35dc8 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8666-4yndgs.png>, @original_filename="Screenshot from 2020-02-06 14-22-29.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-06 14-22-29.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fa1ace0e520>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:14:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 09:04:08 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L1CYsWLj2dTtVlJW+NjyAKwHbOBIcNk3q/c66rNNPGwwxM0LXsmNyRC3i791D0aIR6tqDSAilxQQOaZ/yk3Rlg==", "article"=>{"title"=>"business blah", "body"=>"business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-10", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x000055571b8cea98 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8666-wn9cir.png>, @original_filename="Screenshot from 2020-02-06 14-22-29.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-06 14-22-29.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x000055571b877838>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:14:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 09:04:09 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L1CYsWLj2dTtVlJW+NjyAKwHbOBIcNk3q/c66rNNPGwwxM0LXsmNyRC3i791D0aIR6tqDSAilxQQOaZ/yk3Rlg==", "article"=>{"title"=>"business blah", "body"=>"business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-10", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fa1acca1750 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8666-iyftaz.png>, @original_filename="Screenshot from 2020-02-06 14-22-29.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-06 14-22-29.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fa1acc79c28>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:14:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 09:04:09 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L1CYsWLj2dTtVlJW+NjyAKwHbOBIcNk3q/c66rNNPGwwxM0LXsmNyRC3i791D0aIR6tqDSAilxQQOaZ/yk3Rlg==", "article"=>{"title"=>"business blah", "body"=>"business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-10", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x000055571a9c8c88 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8666-1xguuqs.png>, @original_filename="Screenshot from 2020-02-06 14-22-29.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-06 14-22-29.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x000055571a925cb8>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:14:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 09:04:09 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L1CYsWLj2dTtVlJW+NjyAKwHbOBIcNk3q/c66rNNPGwwxM0LXsmNyRC3i791D0aIR6tqDSAilxQQOaZ/yk3Rlg==", "article"=>{"title"=>"business blah", "body"=>"business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-10", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fa1ac9d5e68 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8666-wwbq6o.png>, @original_filename="Screenshot from 2020-02-06 14-22-29.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-06 14-22-29.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fa1ac9ba8e8>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:14:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 09:05:12 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L1CYsWLj2dTtVlJW+NjyAKwHbOBIcNk3q/c66rNNPGwwxM0LXsmNyRC3i791D0aIR6tqDSAilxQQOaZ/yk3Rlg==", "article"=>{"title"=>"business blah", "body"=>"business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-10", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fa1acea8120 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8666-1vs818g.png>, @original_filename="Screenshot from 2020-02-06 14-22-29.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-06 14-22-29.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.6ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fa1ace21ad0>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:14:in `create'
+Started GET "/articles/new" for ::1 at 2020-02-11 09:05:15 +0530
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/articles/_form.html.erb:11
+  Rendered articles/_form.html.erb (38.4ms)
+  Rendered articles/new.html.erb within layouts/application (41.2ms)
+Completed 200 OK in 260ms (Views: 252.1ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/articles" for ::1 at 2020-02-11 09:05:25 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vjhj2d1yIJmds9KCxAP8lLMS0UYpz68XB/EIylid0UuhrDZj4Vh0hGBSC2tJ1EgcWL7Xq0Gd4TS8P5RfIZ08sQ==", "article"=>{"title"=>"business blah", "body"=>"Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-12", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fa1ae4fc3b8 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8666-1p7bxt5.png>, @original_filename="Screenshot from 2020-02-07 12-33-59.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-33-59.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fa1ae4da1a0>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:14:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 09:05:27 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vjhj2d1yIJmds9KCxAP8lLMS0UYpz68XB/EIylid0UuhrDZj4Vh0hGBSC2tJ1EgcWL7Xq0Gd4TS8P5RfIZ08sQ==", "article"=>{"title"=>"business blah", "body"=>"Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-12", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fa1ad3b9da8 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8666-fbpoyp.png>, @original_filename="Screenshot from 2020-02-07 12-33-59.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-33-59.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fa1ad3fd4e0>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:14:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 09:05:27 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vjhj2d1yIJmds9KCxAP8lLMS0UYpz68XB/EIylid0UuhrDZj4Vh0hGBSC2tJ1EgcWL7Xq0Gd4TS8P5RfIZ08sQ==", "article"=>{"title"=>"business blah", "body"=>"Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-12", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fa1a42274f8 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8666-1xuec9w.png>, @original_filename="Screenshot from 2020-02-07 12-33-59.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-33-59.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fa1983adf18>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:14:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 09:05:27 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vjhj2d1yIJmds9KCxAP8lLMS0UYpz68XB/EIylid0UuhrDZj4Vh0hGBSC2tJ1EgcWL7Xq0Gd4TS8P5RfIZ08sQ==", "article"=>{"title"=>"business blah", "body"=>"Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-12", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fa1adc58b30 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8666-1a2j49j.png>, @original_filename="Screenshot from 2020-02-07 12-33-59.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-33-59.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fa1adc38358>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:14:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 09:05:28 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vjhj2d1yIJmds9KCxAP8lLMS0UYpz68XB/EIylid0UuhrDZj4Vh0hGBSC2tJ1EgcWL7Xq0Gd4TS8P5RfIZ08sQ==", "article"=>{"title"=>"business blah", "body"=>"Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-12", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fa1a406fd18 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8666-mwxsgw.png>, @original_filename="Screenshot from 2020-02-07 12-33-59.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-33-59.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fa1a406aae8>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:14:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 09:05:28 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vjhj2d1yIJmds9KCxAP8lLMS0UYpz68XB/EIylid0UuhrDZj4Vh0hGBSC2tJ1EgcWL7Xq0Gd4TS8P5RfIZ08sQ==", "article"=>{"title"=>"business blah", "body"=>"Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-12", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fa1adc7d660 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8666-txv07d.png>, @original_filename="Screenshot from 2020-02-07 12-33-59.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-33-59.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fa1adc4fc60>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:14:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 09:05:28 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vjhj2d1yIJmds9KCxAP8lLMS0UYpz68XB/EIylid0UuhrDZj4Vh0hGBSC2tJ1EgcWL7Xq0Gd4TS8P5RfIZ08sQ==", "article"=>{"title"=>"business blah", "body"=>"Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-12", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fa1a4070c40 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8666-q8thfa.png>, @original_filename="Screenshot from 2020-02-07 12-33-59.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-33-59.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fa1a406abb0>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:14:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 09:05:28 +0530
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vjhj2d1yIJmds9KCxAP8lLMS0UYpz68XB/EIylid0UuhrDZj4Vh0hGBSC2tJ1EgcWL7Xq0Gd4TS8P5RfIZ08sQ==", "article"=>{"title"=>"business blah", "body"=>"Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-12", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007fa1adc58860 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-8666-bh4jyj.png>, @original_filename="Screenshot from 2020-02-07 12-33-59.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-33-59.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published_date=' for #<Article:0x00007fa1adc0f6d8>
+Did you mean?  publish_date=
+               publish_date
+               publish_date?):
+  
+app/controllers/articles_controller.rb:14:in `create'
+Started POST "/articles" for ::1 at 2020-02-11 09:08:15 +0530
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ashsa/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ArticlesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vjhj2d1yIJmds9KCxAP8lLMS0UYpz68XB/EIylid0UuhrDZj4Vh0hGBSC2tJ1EgcWL7Xq0Gd4TS8P5RfIZ08sQ==", "article"=>{"title"=>"business blah", "body"=>"Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology.", "category_id"=>"2", "publish_date"=>"2020-02-12", "feature_image_url"=>#<ActionDispatch::Http::UploadedFile:0x00007f1fc8fc2d00 @tempfile=#<Tempfile:/tmp/RackMultipart20200211-9006-1yzvl71.png>, @original_filename="Screenshot from 2020-02-07 12-33-59.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[feature_image_url]\"; filename=\"Screenshot from 2020-02-07 12-33-59.png\"\r\nContent-Type: image/png\r\n">, "is_published"=>"1"}, "commit"=>"Create Article"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[36mArticle Create (480.5ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "category_id", "publish_date", "feature_image_url", "is_published", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "business blah"], ["body", "Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst Image result for business analyst View all A business analyst (BA) is someone who analyzes an organization or business domain (real or hypothetical) and documents its business or processes or systems, assessing the business model or its integration with technology."], ["category_id", 2], ["publish_date", "2020-02-12"], ["feature_image_url", "#<ActionDispatch::Http::UploadedFile:0x00007f1fc8fc2d00>"], ["is_published", false], ["created_at", "2020-02-11 03:38:15.731860"], ["updated_at", "2020-02-11 03:38:15.731860"]]
+  ↳ app/controllers/articles_controller.rb:21
+  [1m[35m (47.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:21
+Redirected to http://localhost:3000/articles
+Completed 200 OK in 567ms (ActiveRecord: 533.5ms)
+
+
+Started GET "/articles" for ::1 at 2020-02-11 09:08:16 +0530
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 147ms (Views: 145.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/articles" for ::1 at 2020-02-11 09:08:31 +0530
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 58ms (Views: 53.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/articles" for ::1 at 2020-02-11 09:08:39 +0530
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 50ms (Views: 44.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/articles/new" for ::1 at 2020-02-11 09:09:45 +0530
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/articles/_form.html.erb:11
+  Rendered articles/_form.html.erb (27.8ms)
+  Rendered articles/new.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 88ms (Views: 85.9ms | ActiveRecord: 0.4ms)
+
+
