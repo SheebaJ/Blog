@@ -1,3 +1,13 @@
+ <%= link_to @article.category.name, @article.category %><br/>
+ <label>Article title : </label><%= @article.title %><br/>
+    <label>Body : </label><%= @article.body %><br/>
+    <label>Published_Date : </label><%= @article.publish_date %><br/>
+  <% if @article.is_published %>
+    It is published
+  <% else %>
+    It is not published
+  <% end %>
+  <br/>
+  <%= image_tag(@article.feature_image_url.to_s,size: "50x50" , alt:"Image") %><br/><br/>
 
-<%= @article.title %>
-<%= @article.body %><br/>
+    <%= link_to "Home", articles_path %>

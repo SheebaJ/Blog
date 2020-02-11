@@ -1,7 +1,7 @@
 <h2>Categories</h2>
   <%= link_to "New Category", new_category_path %><br/><br/>
 <% @categories.each_with_index do |p,index| %>
-  <%= link_to p.name, category_path(p.id) %>  <%= p.articles.count %><br/>
+  <%= link_to p.name, category_path(p.id) %>  (<%= p.articles.count %> articles)<br/>
   <%= link_to "Edit", edit_article_path(p) %>
   <%= link_to "Delete", p , method: :delete, data: { confirm: "sure?" } %><br/><br/>
 <% end %>
