@@ -20,6 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem "factory_bot_rails"
   gem 'rspec-rails', '~> 4.0.0.beta'
 end
 
@@ -33,6 +34,10 @@ end
 group :test do
   gem 'chromedriver-helper'
   gem 'capybara', '>= 2.15'
+  gem 'faker'
+  gem 'guard-rspec'
+  gem 'launchy'
+  gem 'rails-controller-testing'
   gem 'selenium-webdriver'
 end
 
