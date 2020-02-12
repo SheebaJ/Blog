@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+  
   get 'categories',to: 'categories#index', as: 'categories'
   get 'categories/new',to: 'categories#new', as: 'new_category'
   get 'categories/:id',to: 'categories#show', as: 'category'
