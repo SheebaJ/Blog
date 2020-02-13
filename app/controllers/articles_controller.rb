@@ -43,6 +43,6 @@ private
     params[:article].permit(:title,:body,:is_published,:publish_date,:feature_image_url,:category_id,:slug)
   end
   def set_article
-	@article = Article.find(params[:id])
+	@article = Article.friendly.find(params[:id])
   end
 end
