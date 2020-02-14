@@ -1,3 +1,4 @@
+ <label><h2>Article</h2></label>
  <%= link_to @article.category.name, @article.category %><br/>
  <label>Article title : </label><%= @article.title %><br/>
     <label>Body : </label><%= @article.body %><br/>
@@ -8,6 +9,31 @@
     It is not published
   <% end %>
   <br/>
-  <%= image_tag(@article.feature_image_url.to_s,size: "50x50" , alt:"Image") %><br/><br/>
+<%= image_tag(@article.feature_image_url.to_s,size: "50x50" , alt:"Image") %><br/><br/>
+   <% if (user_signed_in?) && (can? :manage, Article.new) %>
+  <%= link_to "Edit", edit_article_path(@article) %> <br/>
+  <%= link_to "Destroy",article_path(@article), method: :delete, data:{confirm: "Are you Sure?"}%> |
+  <%= link_to "ALL ", articles_path %>
+<% end %>
 
-    <%= link_to "Home", articles_path %>
+ <label><h2>Comments</h2></label>
+<%= form_with model: @comment do |f| %>
+	<%= f.hidden_field :article_id , value: @article.id %><br/>
+
+  <label> Enter title </label>
+  <%= f.text_field :title %>  
+
+  <label> Enter body </label>
+  <%= f.text_field :body %>
+
+  <%= f.submit %>
+  <%end%>
+
+
+<% @article.comments.each do |c|%>
+  <%= c.title%>
+  <%= c.body%>
+  <%= link_to "Edit", edit_comment_path(c) %> 
+  <%= link_to "Destroy",comment_path(c), method: :delete, data:{confirm: "Are you Sure?"}%> |
+<%end%>
+<br/>

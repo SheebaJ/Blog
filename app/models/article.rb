@@ -1,6 +1,7 @@
 class Article < ApplicationRecord
     belongs_to :category
     belongs_to :user
+    has_many :comments
     validates_presence_of :title,:body,:category_id,:publish_date,:feature_image_url,:slug
     validate :article_published?
 

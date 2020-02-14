@@ -1,14 +1,17 @@
 class ArticlesController < ApplicationController
     before_action :set_article, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!, except: [:index, :show]
+    load_and_authorize_resource
+
     def index
+        @user = current_user
         @articles = Article.all
     end
     def new
         @article = Article.new
     end
     def create
-        @article = current_user.articles.new(article_params)
+        @article = Article.new(article_params)
         @article.user_id = current_user.id
         if @article.publish_date <= Date.today
 			@article.is_published = true
@@ -18,15 +21,15 @@ class ArticlesController < ApplicationController
         if @article.save
             redirect_to articles_path
         else
-            render action: "new"
         end
     end
     def show
+        @comment = Comment.new
     end
     def edit
     end
     def update
-       if @article.update_attributes(article_params)
+       if @article.save
             redirect_to articles_path
         else
         end

@@ -1,3 +1,4 @@
+
 <h1><%= @category.name %></h1>
 <p> <%= @category.description %></p>
   
@@ -9,5 +10,8 @@
 	  Posted on <%= article.publish_date.strftime("%B %d %Y") %><br/><br/>
   <% end %>
   <%= link_to "Home", categories_path %>
-
+<% if (user_signed_in?) && (can? :manage, Category.new) %>
+  <%= link_to "Edit", edit_category_path(@category) %> |
+  <%= link_to "Destroy",category_path(@category), method: :delete, date:{confirm: "Are you Sure?"}%> |
+<% end %>
 
