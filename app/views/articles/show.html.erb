@@ -16,8 +16,8 @@
   <%= link_to "ALL ", articles_path %>
 <% end %>
 
+<% if (user_signed_in?) && (can? :create, Comment.new) %>
 <%= form_with model: @comment do |f| %>
-   <% if user_signed_in? %>
 
 	<%= f.hidden_field :article_id , value: @article.id %><br/>
 
@@ -29,20 +29,28 @@
 
   <%= f.submit %>
   <%end%>
+  <%end%>
 <br/><br/>
 
-   <% if (user_signed_in?) && (can? :update, Comment.new) %>
-<% @article.comments.each do |c|%>
- <li><%= c.title%>
+<% if (user_signed_in?) && (can? :update, Comment.new) %>
+  <% @article.comments.each do |c|%>
+  <li><%= c.title%>
   <%= c.body%>
   <%= link_to "Edit", edit_comment_path(c) %> 
   <%= link_to "Destroy",comment_path(c), method: :delete, data:{confirm: "Are you Sure?"}%> 
-</li>
-<%end%>
+  </li>
+  <%end%>
 <%else%>
-<% Comment.where(:article_id => @article.id).each do |comment| %>
-  <b> <%= comment.title %>: </b> <%= comment.body %>
-<% end %>
-<%end%>
-<br/>
-<%end%>
+<%if (user_signed_in?) && (can? :destroy, Comment.new) %>
+  <% @article.comments.each do |c|%>
+  <li>
+    <%= c.title%> - <%= c.body%>
+  <%= link_to "Destroy",comment_path(c), method: :delete, data:{confirm: "Are you Sure?"}%> </li>
+ <%end%>
+<%else%>
+  <% Comment.where(:article_id => @article.id).each do |comment| %>
+  <b> <%= comment.title %>:  <%= comment.body %><br/>
+  <%end%>
+  <%end%>
+  <%end%>
+
