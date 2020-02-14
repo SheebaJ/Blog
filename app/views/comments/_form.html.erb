@@ -1,6 +1,8 @@
 
 <%= form_with model: @comment do |f| %>
-
+ 
+  <% if user_signed_in? %>
+    <%= f.text_field :article_id, hidden:true %>
 
   <label> Enter title </label>
   <%= f.text_field :title %>  
@@ -9,5 +11,5 @@
   <%= f.text_field :body %>
 
   <%= f.submit %>
-
+<%end%>
 <% end %>

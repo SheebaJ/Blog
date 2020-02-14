@@ -29,6 +29,7 @@ class ArticlesController < ApplicationController
     def edit
     end
     def update
+        @article.user_id = current_user.id
        if @article.save
             redirect_to articles_path
         else
