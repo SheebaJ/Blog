@@ -8,6 +8,8 @@ class Article < ApplicationRecord
     extend FriendlyId
     friendly_id :title, use: :slugged
 
+    
+
     mount_uploader :feature_image_url,FeatureImageUrlUploader 
 
     def article_published?

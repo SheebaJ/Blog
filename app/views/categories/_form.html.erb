@@ -1,12 +1,43 @@
+<%= form_with model: @category, :html => {:class => "form", :id => "categoryForm"} do |f| %>
 
 <%= form_with model: @category do |f| %>
 
   <label> Enter category name </label>
-  <%= f.text_field :name %>  
+  <%= f.text_field :name :description , id: 'catname' %> <span id = "nameError"> </span> <br/><br/>  
 
   <label> Enter description </label>
-  <%= f.text_field :description %>
+  <%= f.text_field :description , id: 'catdescription' %> <span id = "descriptionError"> </span> <br/><br/>
 
-  <%= f.submit %>
-
+  <%= f.submit ,id: 'catsubmit' %>
 <% end %>
+<%end%>
+
+<script>
+ var formHandle = document.getElementById('categoryForm'); 
+  var nameElement = document.getElementById('catname');
+  var description = document.getElementById('catdescription');
+  var submitHandle = document.getElementById('catSubmit');
+  
+    var nameError = document.getElementById('nameError');
+  var descriptionError = document.getElementById('descriptionError');
+  formHandle.addEventListener('submit',function(e){
+    if (nameElement.value === "") {
+      nameError.innerHTML = "Name field cannot be empty";
+      e.preventDefault();
+    }
+    else{
+      nameError.innerHTML = "";
+    }
+
+    if (description.value === "") {
+      descError.innerHTML = "Description cannot be empty";
+      e.preventDefault();
+    }
+    else{
+      descError.innerHTML = "";
+    }
+    setTimeout(function(){
+        submitHandle.disabled = false;
+      },100);
+  },false);
+</script>

@@ -27,14 +27,51 @@
 <% end %>
 
 <%= form_with model: @comment do |f| %>
+<%= form_for Postcomment.new, :html => {:class => "form", :id => "articleForm"} do |f| %>
 
+  <% if user_signed_in? %>
 	<%= f.hidden_field :article_id , value: @article.id %><br/>
 
   <label> Enter title </label>
-  <%= f.text_field :title %>  
+  <%= f.text_field :title %>  <span id="titleError"></span>  <br/>
+ 
 
   <label> Enter body </label>
-  <%= f.text_field :body %>
+  <%= f.text_field :body %> <span id="bodyError"></span>
 
-  <%= f.submit %>
+  <%= f.submit "save", id: "articleSubmit" %><br/>
+
   <%end%>
+  <%end%>
+
+<script>
+  var title = document.getElementById('comment_title');
+  var comment = document.getElementById('comment_body');
+  var formHandle = document.getElementById('articleForm');
+  var submitHandle = document.getElementById('articleSubmit');
+
+  var titleErrorHandle = document.getElementById('titleError');
+  var bodyErrorHandle = document.getElementById('bodyError');
+
+  formHandle.addEventListener('submit',function(e){
+    if (title.value === "") {
+      titleErrorHandle.innerHTML = "Title field cannot be empty";
+      e.preventDefault();
+    }else{
+      titleErrorHandle.innerHTML = "";
+    }
+
+    if (comment.value === "") {
+      bodyErrorHandle.innerHTML = "Title field cannot be empty";
+      e.preventDefault();
+    }else{
+      bodyErrorHandle.innerHTML = "";
+    }
+    setTimeout(function(){
+        submitHandle.disabled = false;
+      },100);
+
+  },true);
+
+</script> 
+ 40 
