@@ -22,6 +22,7 @@ class Ability
       end
     elsif user.roles.pluck(:title).include? "user" 
       can :read, [Category, Article, Comment]
+      can :create, Article 
       can [:read, :create], Comment
       can [:update, :destroy], Comment do |comment|
       comment.user_id == user.id

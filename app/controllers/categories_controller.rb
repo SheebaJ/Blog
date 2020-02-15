@@ -27,7 +27,6 @@ class CategoriesController < ApplicationController
 		if @category.update_attributes (category_params)
 			redirect_to categories_path(@category.id)
 		else
-			render action: "edit"
 		end
 	end
 	def destroy

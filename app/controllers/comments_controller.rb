@@ -20,7 +20,9 @@ class CommentsController < ApplicationController
         end
     
         def update
-            if @comment.save (comment_params)
+            @comment.title = params['comment']['title']
+            @comment.body = params['comment']['body']
+            if @comment.save 
                 redirect_to article_path(@comment.article.id)
             end
         end

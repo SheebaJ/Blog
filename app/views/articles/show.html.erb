@@ -10,13 +10,22 @@
   <% end %>
   <br/>
 <%= image_tag(@article.feature_image_url.to_s,size: "50x50" , alt:"Image") %><br/><br/>
-   <% if (user_signed_in?) && (can? :manage, Article.new) %>
+   <% if (user_signed_in?) && (can? :manage, Category.new) %>
   <%= link_to "Edit", edit_article_path(@article) %> <br/>
   <%= link_to "Destroy",article_path(@article), method: :delete, data:{confirm: "Are you Sure?"}%> |
   <%= link_to "ALL ", articles_path %>
 <% end %>
 
-<% if (user_signed_in?) && (can? :create, Comment.new) %>
+<% @article.comments.each do |comment| %> 
+  				<b> Title: </b> <%= comment.title %>
+  				<b> Body: </b> <%= comment.body %>
+          <% if comment.user_id == current_user.id %>
+            <%= link_to "Edit", edit_comment_path(comment) %> 
+            <%= link_to "Destroy",comment_path(comment), method: :delete, data:{confirm: "Are you Sure?"}%>
+          <% end %>
+          <br/>
+<% end %>
+
 <%= form_with model: @comment do |f| %>
 
 	<%= f.hidden_field :article_id , value: @article.id %><br/>
@@ -29,28 +38,3 @@
 
   <%= f.submit %>
   <%end%>
-  <%end%>
-<br/><br/>
-
-<% if (user_signed_in?) && (can? :update, Comment.new) %>
-  <% @article.comments.each do |c|%>
-  <li><%= c.title%>
-  <%= c.body%>
-  <%= link_to "Edit", edit_comment_path(c) %> 
-  <%= link_to "Destroy",comment_path(c), method: :delete, data:{confirm: "Are you Sure?"}%> 
-  </li>
-  <%end%>
-<%else%>
-<%if (user_signed_in?) && (can? :destroy, Comment.new) %>
-  <% @article.comments.each do |c|%>
-  <li>
-    <%= c.title%> - <%= c.body%>
-  <%= link_to "Destroy",comment_path(c), method: :delete, data:{confirm: "Are you Sure?"}%> </li>
- <%end%>
-<%else%>
-  <% Comment.where(:article_id => @article.id).each do |comment| %>
-  <b> <%= comment.title %>:  <%= comment.body %><br/>
-  <%end%>
-  <%end%>
-  <%end%>
-

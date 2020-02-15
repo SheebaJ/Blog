@@ -19,7 +19,15 @@ class ArticlesController < ApplicationController
 			@article.is_published = false
 		end
         if @article.save
+            if not current_user.permissions.exists?(role_id:3) and not current_user.permissions.exists?(role_id:2)
+                @permission = Permission.new
+                @permission.user_id = current_user.id
+                @permission.role_id = 3
+                if not @permission.save
+                  redirect_to errors_path
+                end
             redirect_to articles_path
+            end
         else
         end
     end
