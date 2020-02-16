@@ -27,7 +27,7 @@
 <% end %>
 
 <%= form_with model: @comment do |f| %>
-<%= form_for Postcomment.new, :html => {:class => "form", :id => "articleForm"} do |f| %>
+<%= form_for Comment.new, :html => {:class => "form", :id => "articleForm"} do |f| %>
 
   <% if user_signed_in? %>
 	<%= f.hidden_field :article_id , value: @article.id %><br/>
@@ -43,7 +43,7 @@
 
   <%end%>
   <%end%>
-
+  <%end%>
 <script>
   var title = document.getElementById('comment_title');
   var comment = document.getElementById('comment_body');
@@ -74,4 +74,4 @@
   },true);
 
 </script> 
- 40 
+ 
