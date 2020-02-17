@@ -11,13 +11,15 @@ class ArticlesController < ApplicationController
         @article = Article.new
     end
     def create
-        @article = Article.new(article_params)
+      
+        @article = Article.friendly.new(article_params)
         @article.user_id = current_user.id
+        @article.feature_image_url = params['article']['feature_image_url']
         if @article.publish_date <= Date.today
-			@article.is_published = true
-		else
-			@article.is_published = false
-		end
+			    @article.is_published = true
+		    else
+			    @article.is_published = false
+        end
         if @article.save
             if not current_user.permissions.exists?(role_id:3) and not current_user.permissions.exists?(role_id:2)
                 @permission = Permission.new
@@ -26,9 +28,9 @@ class ArticlesController < ApplicationController
                 if not @permission.save
                   redirect_to errors_path
                 end
-            redirect_to articles_path
             end
-        else
+            redirect_to articles_path
+        else  
         end
     end
     def show
@@ -37,9 +39,24 @@ class ArticlesController < ApplicationController
     def edit
     end
     def update
+        
+        @article = Article.friendly.find(params[:id])
+        @article.title = params['article']['title']
+        @article.body = params['article']['body']
+        @article.category_id = params['article']['category_id']
+        @article.publish_date = params['article']['publish_date']
         @article.user_id = current_user.id
+        if not params['article']['feature_image_url'].nil?
+            @article.feature_image_url = params['article']['feature_image_url']
+          end
+          if @article.publish_date <= Date.today
+            @article.is_published = true
+          elsif @article.publish_date > Date.today
+            @article.is_published = false
+          end
+      
        if @article.save
-            redirect_to articles_path
+            redirect_to articles_path(@article.id)
         else
         end
     end

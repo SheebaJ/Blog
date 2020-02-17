@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
     before_action :set_article, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!, except: [:index, :show]
-    load_and_authorize_resource
    def index
      @comments = Comment.all
    end

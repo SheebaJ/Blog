@@ -4,12 +4,12 @@
   <% if user_signed_in? %>
     <%= f.text_field :article_id, hidden:true %>
 
-  <label> Enter title </label>
-  <%= f.text_field :title %>  
+    <label> Enter title </label>
+    <%= f.text_field :title %>  
 
-  <label> Enter body </label>
-  <%= f.text_field :body %>
+    <label> Enter body </label>
+    <%= f.text_field :body %>
 
-  <%= f.submit %>
-<%end%>
+    <%= f.submit %>
+  <%end%>
 <% end %>

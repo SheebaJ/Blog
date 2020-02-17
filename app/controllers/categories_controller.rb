@@ -24,9 +24,11 @@ class CategoriesController < ApplicationController
 	end
 
 	def update
-		if @category.update_attributes (category_params)
-			redirect_to categories_path(@category.id)
-		else
+		@category = Category.find(params[:id])
+		@category.name = params['category']['name']
+		@category.description = params['category']['description']
+		if @category.save
+		  redirect_to categories_path
 		end
 	end
 	def destroy

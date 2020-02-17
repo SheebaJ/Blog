@@ -15,19 +15,19 @@ class Ability
       can :read, [Category, Article, Comment]
       can :create, Article 
       can [:update, :destroy], Article do |art|
-      art.article.user_id == user.id
+      art.user_id == user.id
       end
       can :destroy, Comment do |c|
-      c.article.user_id == user.id
+      c.user_id == user.id
       end
     elsif user.roles.pluck(:title).include? "user" 
       can :read, [Category, Article, Comment]
-      can :create, Article 
+      can :create, Article
+      can :update, Article 
       can [:read, :create], Comment
-      can [:update, :destroy], Comment do |comment|
-      comment.user_id == user.id
+      can  :destroy, Comment 
+        comment.user_id == user.id
       end
-    end
     end
       
   end
