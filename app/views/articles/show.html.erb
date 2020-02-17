@@ -16,7 +16,7 @@
   <%= link_to "ALL ", articles_path %>
 <% end %>
 
-   <% if (user_signed_in?) && current_user.id == @article.user_id  %>
+   <% if (user_signed_in?) && current_user.id == @article.user_id  && current_user.roles.first['title'] != 'moderator' %>
     <%= link_to "Edit", edit_article_path(@article) %> <br/>
   <%end%>
 
