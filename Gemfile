@@ -11,7 +11,6 @@ gem 'devise'
 gem 'friendly_id', '~> 5.2.4'
 gem 'hirb'
 gem 'jbuilder', '~> 2.5'
-gem 'pg', '>= 0.18', '< 2.0'
 gem 'pry'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
@@ -27,7 +26,7 @@ end
 
 
 group :production do
-  gem 'pg', '>= 0.18', '< 2.0'
+  gem 'pg'
   gem 'rails_12factor' 
 end
 
