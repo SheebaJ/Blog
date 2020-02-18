@@ -1,4 +1,6 @@
+<%= form_with model: @article, :html => {:class => "form", :id => "commentForm"} do |f| %>
 
+  <% if user_signed_in? %>
 <%= form_with model: @comment do |f| %>
  
   <% if user_signed_in? %>
@@ -13,3 +15,10 @@
     <%= f.submit %>
   <%end%>
 <% end %>
+<script>
+  var formHandle = document.getElementById('articleForm');
+  var categoryHandle = document.getElementById('article_category_id');
+  var titleHandle = document.getElementById('article_title');
+  var b
+
+  </script>

@@ -12,6 +12,13 @@ class User < ApplicationRecord
     validates_presence_of :username, :mobile, :gender, :dob
   validates_numericality_of :mobile
   validates_length_of :mobile, is: 10
+  validate :validate_age
+  def validate_age
+    if dob.present? && dob > 18.years.ago.to_date
+        errors.add(:dob, 'should be over 18 years old.')
+    end
+end
+
 
   after_create :assign_user_role
 

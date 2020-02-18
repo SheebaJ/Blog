@@ -25,11 +25,10 @@ class Ability
       can :create, Article
       can :update, Article 
       can [:read, :create], Comment
-      can  :destroy, Comment 
+      can  :destroy, Comment do |comment|
         comment.user_id == user.id
       end
-    end
-      
+    end 
   end
-
+end
   
